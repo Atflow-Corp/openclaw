@@ -1,0 +1,18 @@
+defaults:
+  github_org: Atflow-Corp
+  remote_protocol: ssh
+  ssh_url_template: git@github.com:Atflow-Corp/{repo}.git
+  repo_root: /Users/atflow/repos
+  worktree_root: /Users/atflow/worktrees
+  commit_author_names:
+    main: OpenClaw Main
+    pm: OpenClaw PM
+    research: OpenClaw Research
+    planning: OpenClaw Planning
+    design: OpenClaw Design
+    dev-lead: OpenClaw Dev Lead
+    dev-coder: OpenClaw Dev Coder
+    qa: OpenClaw QA
+
+projects: {}
+

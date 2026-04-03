@@ -1,0 +1,12 @@
+.env
+.DS_Store
+sessions/
+sandboxes/
+logs/
+media/
+pairings/
+extensions/
+tmp/
+worktrees/
+repos/
+

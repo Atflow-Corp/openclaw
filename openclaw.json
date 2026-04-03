@@ -1,0 +1,490 @@
+{
+  "auth": {
+    "profiles": {
+      "ollama:default": {
+        "provider": "ollama",
+        "mode": "api_key"
+      },
+      "google:default": {
+        "provider": "google",
+        "mode": "api_key"
+      }
+    }
+  },
+  "models": {
+    "mode": "merge",
+    "providers": {
+      "ollama": {
+        "baseUrl": "http://127.0.0.1:11434",
+        "api": "ollama",
+        "models": [
+          {
+            "id": "kimi-k2.5:cloud",
+            "name": "kimi-k2.5:cloud",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 128000,
+            "maxTokens": 8192
+          },
+          {
+            "id": "minimax-m2.5:cloud",
+            "name": "minimax-m2.5:cloud",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 128000,
+            "maxTokens": 8192
+          },
+          {
+            "id": "minimax-m2.7:cloud",
+            "name": "minimax-m2.7:cloud",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 128000,
+            "maxTokens": 8192
+          },
+          {
+            "id": "qwen3.5:cloud",
+            "name": "qwen3.5:cloud",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 128000,
+            "maxTokens": 8192
+          },
+          {
+            "id": "deepseek-v3.2:cloud",
+            "name": "deepseek-v3.2:cloud",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 128000,
+            "maxTokens": 8192
+          },
+          {
+            "id": "glm-5:cloud",
+            "name": "glm-5:cloud",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 128000,
+            "maxTokens": 8192
+          },
+          {
+            "id": "nomic-embed-text-v2-moe:latest",
+            "name": "nomic-embed-text-v2-moe:latest",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 512,
+            "maxTokens": 8192
+          }
+        ]
+      }
+    }
+  },
+  "agents": {
+    "defaults": {
+      "model": {
+        "primary": "google/gemini-3-flash-preview",
+        "fallbacks": [
+          "ollama/minimax-m2.7:cloud",
+          "ollama/kimi-k2.5:cloud",
+          "ollama/glm-5:cloud",
+          "ollama/minimax-m2.5:cloud",
+          "ollama/qwen3.5:cloud",
+          "google/gemini-3.1-flash-lite-preview",
+          "ollama/granite4",
+          "ollama/gemma3n:e4b"
+        ]
+      },
+      "models": {
+        "ollama/kimi-k2.5:cloud": {
+          "alias": "kimi"
+        },
+        "ollama/gemini-3-flash-preview:cloud": {
+          "alias": "gemini-cloud"
+        },
+        "ollama/glm-5:cloud": {
+          "alias": "glm"
+        },
+        "ollama/minimax-m2.5:cloud": {
+          "alias": "minimax-m2.5"
+        },
+        "ollama/minimax-m2.7:cloud": {
+          "alias": "minimax"
+        },
+        "ollama/qwen3.5:cloud": {
+          "alias": "qwen"
+        },
+        "ollama/deepseek-v3.2:cloud": {
+          "alias": "deepseek"
+        },
+        "google/gemini-3.1-pro-preview": {
+          "alias": "gemini-pro"
+        },
+        "google/gemini-3-flash-preview": {
+          "alias": "gemini"
+        },
+        "ollama/granite4": {
+          "alias": "granite"
+        },
+        "ollama/gemma3n:e4b": {
+          "alias": "gemma"
+        },
+        "google/gemini-3.1-flash-lite-preview": {
+          "alias": "gemini-lite"
+        }
+      },
+      "workspace": "/Users/atflow/.openclaw/workspace",
+      "memorySearch": {
+        "provider": "ollama",
+        "model": "nomic-embed-text-v2-moe"
+      },
+      "compaction": {
+        "mode": "safeguard"
+      },
+      "heartbeat": {
+        "every": "30m",
+        "model": "google/gemini-3.1-flash-lite-preview"
+      },
+      "maxConcurrent": 4,
+      "subagents": {
+        "maxConcurrent": 8,
+        "maxSpawnDepth": 2
+      }
+    },
+    "list": [
+      {
+        "id": "main",
+        "default": true,
+        "name": "Main",
+        "workspace": "/Users/atflow/.openclaw/workspace",
+        "agentDir": "/Users/atflow/.openclaw/agents/main/agent",
+        "identity": {
+          "name": "Main"
+        }
+      },
+      {
+        "id": "pm",
+        "name": "PM",
+        "workspace": "/Users/atflow/.openclaw/workspace-pm",
+        "agentDir": "/Users/atflow/.openclaw/agents/pm/agent",
+        "model": "google/gemini-3.1-pro-preview",
+        "identity": {
+          "name": "PM"
+        },
+        "subagents": {
+          "allowAgents": [
+            "research",
+            "planning",
+            "design",
+            "dev-lead",
+            "qa"
+          ],
+          "requireAgentId": true
+        }
+      },
+      {
+        "id": "research",
+        "name": "Research",
+        "workspace": "/Users/atflow/.openclaw/workspace-research",
+        "agentDir": "/Users/atflow/.openclaw/agents/research/agent",
+        "model": "google/gemini-3.1-pro-preview",
+        "identity": {
+          "name": "Research"
+        }
+      },
+      {
+        "id": "planning",
+        "name": "Planning",
+        "workspace": "/Users/atflow/.openclaw/workspace-planning",
+        "agentDir": "/Users/atflow/.openclaw/agents/planning/agent",
+        "model": "google/gemini-3-flash-preview",
+        "identity": {
+          "name": "Planning"
+        }
+      },
+      {
+        "id": "design",
+        "name": "Design",
+        "workspace": "/Users/atflow/.openclaw/workspace-design",
+        "agentDir": "/Users/atflow/.openclaw/agents/design/agent",
+        "model": "google/gemini-3-flash-preview",
+        "identity": {
+          "name": "Design"
+        }
+      },
+      {
+        "id": "dev-lead",
+        "name": "Dev Lead",
+        "workspace": "/Users/atflow/.openclaw/workspace-dev-lead",
+        "agentDir": "/Users/atflow/.openclaw/agents/dev-lead/agent",
+        "model": "google/gemini-3.1-pro-preview",
+        "identity": {
+          "name": "Dev Lead"
+        },
+        "subagents": {
+          "allowAgents": [
+            "dev-coder"
+          ],
+          "requireAgentId": true
+        }
+      },
+      {
+        "id": "dev-coder",
+        "name": "Dev Coder",
+        "workspace": "/Users/atflow/.openclaw/workspace-dev-coder",
+        "agentDir": "/Users/atflow/.openclaw/agents/dev-coder/agent",
+        "model": "google/gemini-3-flash-preview",
+        "identity": {
+          "name": "Dev Coder"
+        }
+      },
+      {
+        "id": "qa",
+        "name": "QA",
+        "workspace": "/Users/atflow/.openclaw/workspace-qa",
+        "agentDir": "/Users/atflow/.openclaw/agents/qa/agent",
+        "model": "google/gemini-3-flash-preview",
+        "identity": {
+          "name": "QA"
+        }
+      }
+    ]
+  },
+  "bindings": [
+    {
+      "agentId": "main",
+      "match": {
+        "channel": "slack",
+        "accountId": "main",
+        "peer": {
+          "kind": "channel",
+          "id": "C0AFYJXUQS0"
+        }
+      }
+    },
+    {
+      "agentId": "pm",
+      "match": {
+        "channel": "slack",
+        "accountId": "pm",
+        "peer": {
+          "kind": "channel",
+          "id": "C0AQMENGSSH"
+        }
+      }
+    },
+    {
+      "agentId": "research",
+      "match": {
+        "channel": "slack",
+        "accountId": "research",
+        "peer": {
+          "kind": "channel",
+          "id": "C0ARKPVJD7A"
+        }
+      }
+    }
+  ],
+  "tools": {
+    "profile": "coding",
+    "web": {
+      "search": {
+        "enabled": true,
+        "provider": "duckduckgo"
+      }
+    }
+  },
+  "messages": {
+    "ackReactionScope": "group-mentions"
+  },
+  "commands": {
+    "native": "auto",
+    "nativeSkills": "auto",
+    "restart": true,
+    "ownerDisplay": "raw"
+  },
+  "session": {
+    "dmScope": "per-channel-peer"
+  },
+  "channels": {
+    "slack": {
+      "mode": "socket",
+      "webhookPath": "/slack/events",
+      "defaultAccount": "main",
+      "accounts": {
+        "main": {
+          "name": "main",
+          "groupPolicy": "open",
+          "dmPolicy": "open",
+          "allowFrom": [
+            "*"
+          ],
+          "appToken": "${SLACK_APP_TOKEN}",
+          "botToken": "${SLACK_BOT_TOKEN}"
+        },
+        "pm": {
+          "name": "pm",
+          "groupPolicy": "allowlist",
+          "dmPolicy": "disabled",
+          "appToken": "${SLACK_PM_APP_TOKEN}",
+          "botToken": "${SLACK_PM_BOT_TOKEN}"
+        },
+        "research": {
+          "name": "research",
+          "groupPolicy": "allowlist",
+          "dmPolicy": "disabled",
+          "appToken": "${SLACK_RESEARCH_APP_TOKEN}",
+          "botToken": "${SLACK_RESEARCH_BOT_TOKEN}"
+        }
+      },
+      "capabilities": {
+        "interactiveReplies": true
+      },
+      "enabled": true,
+      "userTokenReadOnly": true,
+      "groupPolicy": "open",
+      "streaming": "partial",
+      "nativeStreaming": true,
+      "replyToMode": "off",
+      "replyToModeByChatType": {
+        "direct": "off",
+        "channel": "all"
+      },
+      "dmPolicy": "open",
+      "allowFrom": [
+        "*"
+      ],
+      "dm": {
+        "enabled": true
+      },
+      "channels": {
+        "C0AFYJXUQS0": {
+          "allow": true,
+          "requireMention": false
+        },
+        "C0AQMENGSSH": {
+          "allow": true,
+          "requireMention": false
+        },
+        "C0ARKPVJD7A": {
+          "allow": true,
+          "requireMention": false
+        }
+      }
+    },
+    "telegram": {
+      "enabled": true,
+      "dmPolicy": "pairing",
+      "botToken": "${TELEGRAM_BOT_TOKEN}",
+      "groups": {
+        "*": {
+          "requireMention": true
+        }
+      },
+      "groupPolicy": "allowlist",
+      "streaming": "partial"
+    }
+  },
+  "gateway": {
+    "port": 18789,
+    "mode": "local",
+    "bind": "loopback",
+    "controlUi": {
+      "allowInsecureAuth": true
+    },
+    "auth": {
+      "mode": "password",
+      "password": {
+        "source": "env",
+        "provider": "default",
+        "id": "OPENCLAW_GATEWAY_PASSWORD"
+      }
+    },
+    "tailscale": {
+      "mode": "off",
+      "resetOnExit": false
+    },
+    "nodes": {
+      "denyCommands": [
+        "camera.snap",
+        "camera.clip",
+        "screen.record",
+        "contacts.add",
+        "calendar.add",
+        "reminders.add",
+        "sms.send"
+      ]
+    }
+  },
+  "skills": {
+    "install": {
+      "nodeManager": "pnpm"
+    }
+  },
+  "plugins": {
+    "entries": {
+      "duckduckgo": {
+        "enabled": true,
+        "config": {}
+      },
+      "openclaw-web-search": {
+        "enabled": true,
+        "config": {}
+      }
+    }
+  }
+}
