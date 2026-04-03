@@ -1,0 +1,65 @@
+standard:
+  repository:
+    type: monorepo
+    docs_root: docs
+    app_layout:
+      backend: app
+      templates: app/templates
+      static: app/static
+      infra: infra
+  backend:
+    framework: django
+    language: python
+    frontend_strategy: django-templates
+    separate_frontend: false
+  mobile:
+    framework: flutter
+    state_management: getx
+  database:
+    local: sqlite
+    test: sqlite
+    production: postgres
+  infrastructure:
+    provider: aws
+  development:
+    local_run: django-dev-server
+    test_command: pytest
+    testing_stack:
+      runner: pytest
+      plugins:
+        - pytest-cov
+        - pytest-django
+        - pytest-factoryboy
+        - pytest-freezegun
+        - pytest-mock
+        - django-test-plus
+        - requests-mock
+  documentation:
+    required_dirs:
+      - docs/pm
+      - docs/research
+      - docs/planning
+      - docs/design
+      - docs/dev
+      - docs/qa
+    recommended_files:
+      - docs/pm/brief.md
+      - docs/pm/decisions.md
+      - docs/research/findings.md
+      - docs/planning/plan.md
+      - docs/planning/tasks.md
+      - docs/design/spec.md
+      - docs/design/flows.md
+      - docs/dev/architecture.md
+      - docs/dev/implementation-plan.md
+      - docs/dev/handoff.md
+      - docs/qa/report.md
+      - docs/qa/test-cases.md
+  exposure:
+    public_test_url:
+      preferred: tailscale-funnel
+      purpose: demo-or-review-only
+      notes:
+        - Tailscale Funnel can expose a local Django server publicly from the MacBook Air.
+        - Use Funnel for temporary public review links, not as the primary production hosting strategy.
+        - Production deployment should go to AWS.

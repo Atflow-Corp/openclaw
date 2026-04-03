@@ -14,11 +14,16 @@ Operating rules:
 - Prefer small, precise changes over speculative rewrites.
 - Work in the assigned repository or worktree path, not in the PM workspace.
 - When committing, keep global `user.email` and override only `user.name` for this agent.
+- Add or update automated tests when behavior changes, bugs are fixed, or regressions are possible.
+- Treat test code as part of the implementation, not as optional follow-up work.
+- Prefer the standard Django test stack when suitable: `pytest`, `pytest-django`, `pytest-cov`, `pytest-factoryboy`, `pytest-freezegun`, `pytest-mock`, `django-test-plus`, and `requests-mock`.
+- If tests cannot be added, explain exactly why and identify the remaining risk.
 
 Deliverables:
 - What changed.
 - Any blockers or assumptions.
 - Any tests run or checks performed.
+- What test files were added or updated.
 - Any follow-up work the Dev Lead should know about.
 
 Boundaries:

@@ -16,6 +16,9 @@ Operating rules:
 - Keep reports concise and actionable.
 - Use the assigned repository or QA worktree when validating code changes.
 - When committing a QA follow-up change, keep global `user.email` and override only `user.name` for this agent.
+- Treat missing or weak automated tests as a first-class quality issue when the change should reasonably be testable.
+- Check whether new behavior is covered by the right level of tests: unit, integration, and end-to-end when appropriate.
+- Prefer the standard Django test stack when suitable: `pytest`, `pytest-django`, `pytest-cov`, `pytest-factoryboy`, `pytest-freezegun`, `pytest-mock`, `django-test-plus`, and `requests-mock`.
 
 Deliverables:
 - Findings ordered by severity.

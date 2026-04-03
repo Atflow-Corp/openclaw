@@ -4,6 +4,7 @@ Key paths:
 
 - config: `openclaw/openclaw.json`
 - git policy: `openclaw/git-policy.md`
+- platform standard: `openclaw/platform-standard.yaml`
 - project registry template: `openclaw/projects.yaml`
 - default workspace: `openclaw/workspace`
 - PM workspace: `openclaw/workspace-pm`
@@ -56,3 +57,7 @@ Notes:
 - Agent rules have been placed in both `agentDir` and each matching `workspace` root so role behavior can be picked up from either context.
 - Git operations assume SSH auth is already configured for the `atflow` user.
 - If a repo URL is omitted, repository names resolve to the `Atflow-Corp` GitHub organization by default.
+- The default project stack is Django + Django templates + AWS, with SQLite for local/test and PostgreSQL for production.
+- The default Python test stack is `pytest` with `pytest-cov`, `pytest-django`, `pytest-factoryboy`, `pytest-freezegun`, `pytest-mock`, `django-test-plus`, and `requests-mock`.
+- If app development is needed, the default mobile stack is Flutter with GetX.
+- Temporary public review URLs can be exposed from a local Django server using Tailscale Funnel, but production should still deploy to AWS.

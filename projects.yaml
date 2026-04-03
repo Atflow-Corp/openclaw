@@ -4,6 +4,7 @@ defaults:
   ssh_url_template: git@github.com:Atflow-Corp/{repo}.git
   repo_root: /Users/atflow/repos
   worktree_root: /Users/atflow/worktrees
+  platform_standard: /Users/atflow/.openclaw/platform-standard.yaml
   commit_author_names:
     main: OpenClaw Main
     pm: OpenClaw PM
@@ -13,6 +14,31 @@ defaults:
     dev-lead: OpenClaw Dev Lead
     dev-coder: OpenClaw Dev Coder
     qa: OpenClaw QA
+  stack:
+    backend:
+      framework: django
+      language: python
+    frontend:
+      strategy: django-templates
+      separate_frontend: false
+    mobile:
+      framework: flutter
+      state_management: getx
+    database:
+      local: sqlite
+      test: sqlite
+      production: postgres
+    testing:
+      runner: pytest
+      plugins:
+        - pytest-cov
+        - pytest-django
+        - pytest-factoryboy
+        - pytest-freezegun
+        - pytest-mock
+        - django-test-plus
+        - requests-mock
+    infrastructure:
+      provider: aws
 
 projects: {}
-
