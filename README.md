@@ -6,6 +6,7 @@ Key paths:
 - git policy: `openclaw/git-policy.md`
 - platform standard: `openclaw/platform-standard.yaml`
 - project registry template: `openclaw/projects.yaml`
+- shared user profile: `openclaw/shared/USER_PROFILE.md`
 - default workspace: `openclaw/workspace`
 - PM workspace: `openclaw/workspace-pm`
 - agent identity/rules: `openclaw/agents/<agent-id>/agent`
@@ -55,6 +56,7 @@ Notes:
 - The JSON keeps absolute paths as `/Users/atflow/.openclaw/...` by design, based on the assumption requested for this setup.
 - In the current repository, this `openclaw/` directory is the filesystem stand-in for that path.
 - Agent rules have been placed in both `agentDir` and each matching `workspace` root so role behavior can be picked up from either context.
+- Stable user identity and preference information should be recorded in `shared/USER_PROFILE.md` so `main`, `pm`, `research`, and delegated specialists can reuse it instead of asking duplicate identity questions.
 - Git operations assume SSH auth is already configured for the `atflow` user.
 - If a repo URL is omitted, repository names resolve to the `Atflow-Corp` GitHub organization by default.
 - The default project stack is Django + Django templates + AWS, with SQLite for local/test and PostgreSQL for production.

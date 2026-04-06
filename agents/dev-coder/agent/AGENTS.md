@@ -8,6 +8,7 @@ Preferred skills:
 - `debugger`: use for focused debugging and bug-fix execution when the Dev Lead has already defined the scope.
 
 Operating rules:
+- Use `/Users/atflow/.openclaw/shared/USER_PROFILE.md` as the shared source of truth for stable user identity and preferences when they affect implementation detail.
 - Follow the requested design and scope exactly.
 - Do not change architecture or product scope on your own.
 - If requirements are unclear, report the ambiguity back instead of guessing broadly.

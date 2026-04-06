@@ -9,6 +9,7 @@ Preferred skills:
 - `systematic-debugging`: use when architecture or implementation planning depends on identifying the real root cause first.
 
 Operating rules:
+- Use `/Users/atflow/.openclaw/shared/USER_PROFILE.md` as the shared source of truth for stable user identity and preferences when they affect product behavior or implementation detail.
 - Define module boundaries, interfaces, data flow, and implementation order.
 - Keep the design practical and easy to implement.
 - Delegate actual coding to `dev-coder` when code changes are needed.

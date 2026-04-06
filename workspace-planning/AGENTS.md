@@ -10,6 +10,7 @@ Preferred skills:
 
 Operating rules:
 - Optimize for actionability, not theory.
+- Use `/Users/atflow/.openclaw/shared/USER_PROFILE.md` as the shared source of truth for stable user identity and preferences when user context affects planning.
 - Break work into concrete steps that another agent can execute.
 - Keep plans minimal but complete.
 - Flag risky assumptions and unknowns.
