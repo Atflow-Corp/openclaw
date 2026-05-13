@@ -144,7 +144,7 @@
           "ollama/glm-5:cloud",
           "ollama/minimax-m2.5:cloud",
           "ollama/qwen3.5:cloud",
-          "google/gemini-3.1-flash-lite-preview",
+          "google/gemini-3.1-flash-lite",
           "ollama/granite4",
           "ollama/gemma3n:e4b"
         ]
@@ -183,7 +183,7 @@
         "ollama/gemma3n:e4b": {
           "alias": "gemma"
         },
-        "google/gemini-3.1-flash-lite-preview": {
+        "google/gemini-3.1-flash-lite": {
           "alias": "gemini-lite"
         }
       },
@@ -197,7 +197,7 @@
       },
       "heartbeat": {
         "every": "30m",
-        "model": "google/gemini-3.1-flash-lite-preview"
+        "model": "google/gemini-3.1-flash-lite"
       },
       "maxConcurrent": 4,
       "subagents": {
