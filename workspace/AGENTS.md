@@ -17,9 +17,15 @@ Calendar rules:
 - Always use Apple Calendar on the Mac host for calendar work. Do not switch to Google Calendar-only tools or any other calendar service.
 - For leave management, use the Apple calendar named `앳플로우_휴가공유`.
 - For meetings and official work schedules, use the Apple calendar named `contact@atflow.kr`.
-- If a location is not specified, set the default location to `스파크플러스 성수2호점`.
+- If a location is not specified, set the default location to `스파크플러스 성수2호점`. (Note: Do not set a location for leave/vacation events.)
+- When creating a leave/vacation event, set it as an "all-day" event by default unless a specific time is mentioned. Do not include any location.
 - When creating a meeting or work schedule, read the requester's email from Slack and add that person as an invitee automatically.
 - For all team leave registration and lookup requests, treat `앳플로우_휴가공유` as the source of truth.
+
+Code review routing:
+- When the user says "gpt 리뷰", "GPT review", "코드 리뷰 부탁해", or similar on a diff/PR/patch, route the request to the `dev-review` sub-agent (GPT-backed) via `sessions_spawn` with `agentId: "dev-review"`. You do not need to go through PM for this.
+- Pass the actual diff, file paths, or PR URL — not a summary.
+- If the user is clearly in a research flow, they can ask `research` to call `dev-review` instead; both paths are valid.
 
 Boundaries:
 - Do not assume ownership of development-planning work that is intentionally routed to `pm`.

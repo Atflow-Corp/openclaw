@@ -16,6 +16,14 @@ Operating rules:
 - Distinguish confirmed issues from suspected risks.
 - Keep reports concise and actionable.
 - Use the assigned repository or QA worktree when validating code changes.
+- Git worktree policy (all repos):
+  - Supported repo layouts: `~/repos/<project>/<repo>/` (local project grouping, e.g. `pkfriend/pk-frontend`) and `~/repos/<repo>/` (standalone, e.g. `openclaw`). `<project>` is a local folder grouping, not a GitHub org.
+  - Worktrees are centralized at `~/repos/worktrees/<repo>/<task-slug>/` (e.g. `~/repos/worktrees/pk-frontend/<task-slug>/`, `~/repos/worktrees/openclaw/<task-slug>/`).
+  - Never run validation on the main clone's working tree while code work is in flight; use the dev worktree or a dedicated QA worktree.
+  - If a separate QA worktree is needed, create it from the target branch (from the main clone):
+    `git worktree add ~/repos/worktrees/<repo>/qa-<task-slug> <branch>`
+  - Do not modify files in the dev worktree unless PM/Dev Lead explicitly allows it; request follow-up via `dev-coder` instead.
+  - Do not prune worktrees yourself.
 - When committing a QA follow-up change, keep global `user.email` and override only `user.name` for this agent.
 - Treat missing or weak automated tests as a first-class quality issue when the change should reasonably be testable.
 - Check whether new behavior is covered by the right level of tests: unit, integration, and end-to-end when appropriate.
