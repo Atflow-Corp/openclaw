@@ -1,0 +1,52 @@
+{
+  "_meta": {
+    "description": "Slack user ID -> git Co-authored-by trailer mapping. dev-lead/구현 에이전트가 커밋 메시지에 'Co-authored-by: <coauthor>' trailer를 자동 삽입할 때 참조.",
+    "source": "Slack T017V4H4K7W (atflow) users.list, 2026-05-14",
+    "format": "Slack user ID -> { name, email, coauthor } where coauthor is the ready-to-paste 'Name <email>' string.",
+    "usage_example": "git commit -m \"본문\\n\\nCo-authored-by: 김호승 <seba@atflow.kr>\""
+  },
+  "users": {
+    "U07AY5MD3MM": {
+      "name": "김호승",
+      "email": "seba@atflow.kr",
+      "slack_handle": "sebatyler",
+      "coauthor": "김호승 <seba@atflow.kr>"
+    },
+    "U01C0U69LQJ": {
+      "name": "이선영",
+      "email": "stacey@atflow.kr",
+      "slack_handle": "stacey",
+      "coauthor": "이선영 <stacey@atflow.kr>"
+    },
+    "U03V6DXPLN9": {
+      "name": "차지연",
+      "email": "jiyeon.cha@atflow.kr",
+      "slack_handle": "jiyeon.cha",
+      "coauthor": "차지연 <jiyeon.cha@atflow.kr>"
+    },
+    "U08HMHVBG3S": {
+      "name": "이민정",
+      "email": "yiminjung@atflow.kr",
+      "slack_handle": "yiminjung",
+      "coauthor": "이민정 <yiminjung@atflow.kr>"
+    },
+    "U08HMHX2HDW": {
+      "name": "한소운",
+      "email": "sowoon.han@atflow.kr",
+      "slack_handle": "sowoon.han",
+      "coauthor": "한소운 <sowoon.han@atflow.kr>"
+    },
+    "U0B0XUGGRR7": {
+      "name": "김은민",
+      "email": "gimeunmin1023@snu.ac.kr",
+      "slack_handle": "gimeunmin1023",
+      "coauthor": "김은민 <gimeunmin1023@snu.ac.kr>"
+    },
+    "U0B2RLP27NU": {
+      "name": "Namhong Kim",
+      "email": "namongk@gmail.com",
+      "slack_handle": "namongk",
+      "coauthor": "Namhong Kim <namongk@gmail.com>"
+    }
+  }
+}
