@@ -561,22 +561,46 @@
           "allowFrom": [
             "*"
           ],
-          "appToken": "${APPTOKEN}",
-          "botToken": "${BOTTOKEN}"
+          "appToken": {
+            "source": "env",
+            "provider": "default",
+            "id": "SLACK_APP_TOKEN"
+          },
+          "botToken": {
+            "source": "env",
+            "provider": "default",
+            "id": "SLACK_BOT_TOKEN"
+          }
         },
         "pm": {
           "name": "pm",
           "groupPolicy": "open",
           "dmPolicy": "disabled",
-          "appToken": "${APPTOKEN}",
-          "botToken": "${BOTTOKEN}"
+          "appToken": {
+            "source": "env",
+            "provider": "default",
+            "id": "SLACK_PM_APP_TOKEN"
+          },
+          "botToken": {
+            "source": "env",
+            "provider": "default",
+            "id": "SLACK_PM_BOT_TOKEN"
+          }
         },
         "research": {
           "name": "research",
           "groupPolicy": "open",
           "dmPolicy": "disabled",
-          "appToken": "${APPTOKEN}",
-          "botToken": "${BOTTOKEN}"
+          "appToken": {
+            "source": "env",
+            "provider": "default",
+            "id": "SLACK_RESEARCH_APP_TOKEN"
+          },
+          "botToken": {
+            "source": "env",
+            "provider": "default",
+            "id": "SLACK_RESEARCH_BOT_TOKEN"
+          }
         },
         "default": {
           "webhookPath": "${WEBHOOKPATH}",
@@ -622,7 +646,11 @@
     "telegram": {
       "enabled": true,
       "dmPolicy": "pairing",
-      "botToken": "${BOTTOKEN}",
+      "botToken": {
+        "source": "env",
+        "provider": "default",
+        "id": "TELEGRAM_BOT_TOKEN"
+      },
       "groups": {
         "*": {
           "requireMention": true
@@ -650,7 +678,11 @@
     },
     "auth": {
       "mode": "password",
-      "password": "${PASSWORD}"
+      "password": {
+        "source": "env",
+        "provider": "default",
+        "id": "OPENCLAW_GATEWAY_PASSWORD"
+      }
     },
     "tailscale": {
       "mode": "off",
